@@ -1,0 +1,25 @@
+{
+  "checkedUtc": "2026-11-15T11:16:31.243234+00:00",
+  "status": "PASSED",
+  "environment": "Clean standalone export; CPython 3.12.14; uv sync --locked --offline",
+  "checks": {
+    "lockedDependencyInstall": true,
+    "installedDistributions": 7,
+    "offlineTests": 18,
+    "sdkOperationChecks": 40,
+    "javascriptSyntax": "node --check web/app.js passed",
+    "credentialPatternScan": "No private-key, AWS access-key, GitHub token or per-run emulator-key patterns found",
+    "screenshotHashes": 10
+  },
+  "exclusions": [
+    ".local/",
+    ".venv/",
+    "__pycache__/",
+    "per-run credentials/configuration/certificates",
+    "downloaded StackPort wheel"
+  ],
+  "limits": [
+    "No full live integration rerun during publication preparation",
+    "Existing emulator integration evidence retained; not a production-readiness claim"
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "status": "PASSED",
+  "source_sha256": "a877cf3903689d8383a2c2aa05cab87dc87b2193ce918d3fe2208556b8c066b4",
+  "inlineScreenshots": 10,
+  "totalImagesIncludingThumbnail": 11,
+  "codeExamples": 7,
+  "checks": [
+    "Export hash matches article source",
+    "All seven code downloads exactly match source",
+    "Ten inline screenshot paths match provenance manifest",
+    "Every screenshot hash matches its captured PNG",
+    "New thumbnail included"
+  ],
+  "browser": {
+    "allImagesLoaded": true,
+    "codeCopyStatus": "Code copied as plain text. Paste into a new Medium code block.",
+    "viewportChecks": [
+      {
+        "width": 320,
+        "pageOverflow": false
+      },
+      {
+        "width": 390,
+        "pageOverflow": false
+      },
+      {
+        "width": 1280,
+        "pageOverflow": false
+      }
+    ],
+    "bodyCopyStatus": "Copied for Medium. Tables are lists; check code blocks after pasting."
+  },
+  "limitations": [
+    "Actual clipboard contents and Medium paste fidelity were not verified",
+    "Medium image uploads and preview remain manual publication steps"
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "order": {
+    "quantity": {
+      "N": "2"
+    },
+    "failure": {
+      "S": "once"
+    },
+    "status": {
+      "S": "EVENT_ACCEPTED"
+    },
+    "attempts": {
+      "N": "2"
+    },
+    "orderId": {
+      "S": "01c1c4281e-once"
+    }
+  },
+  "invoice": {
+    "orderId": "01c1c4281e-once",
+    "quantity": 2,
+    "totalCents": 5000,
+    "currency": "USD"
+  }
+}

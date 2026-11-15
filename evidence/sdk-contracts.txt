@@ -1,0 +1,1 @@
+Checked 40 distinct SDK operations: operation names, top-level arguments and required fields

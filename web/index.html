@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Order Lab — local workbench</title>
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/styles.css">
+<script type="module" src="/app.js"></script>
+</head>
+<body>
+<header class="masthead">
+  <div class="identity">
+    <h1>Order Lab</h1>
+    <p class="tagline">A local workbench for the emulated order workflow</p>
+  </div>
+  <dl class="meta">
+    <div><dt>Prefix</dt><dd id="meta-prefix">—</dd></div>
+    <div><dt>Endpoint</dt><dd id="meta-endpoint">—</dd></div>
+    <div><dt>Quantity limit</dt><dd id="meta-limit">—</dd></div>
+  </dl>
+  <p class="connection" id="connection"><span class="conn-dot" aria-hidden="true"></span>Connecting to the lab…</p>
+</header>
+
+<main class="workbench">
+  <section class="rail" aria-labelledby="submit-title">
+    <h2 id="submit-title">Place an order</h2>
+    <form id="order-form" novalidate>
+      <fieldset>
+        <legend>Quantity</legend>
+        <div class="stepper">
+          <button type="button" class="step" data-step="-1" aria-label="Decrease quantity">−</button>
+          <input id="quantity" name="quantity" type="number" inputmode="numeric" min="1" value="2" required>
+          <button type="button" class="step" data-step="1" aria-label="Increase quantity">+</button>
+        </div>
+        <p class="hint">Each unit invoices 2,500 US cents.</p>
+      </fieldset>
+
+      <fieldset>
+        <legend>Failure injection</legend>
+        <div class="choices">
+          <label><input type="radio" name="failure" value="none" checked>
+            <span><strong>None</strong><small>The first attempt invoices</small></span></label>
+          <label><input type="radio" name="failure" value="once">
+            <span><strong>Fail once</strong><small>Retries, then invoices</small></span></label>
+          <label><input type="radio" name="failure" value="always">
+            <span><strong>Fail always</strong><small>Exhausts the retries</small></span></label>
+        </div>
+      </fieldset>
+
+      <button class="primary" type="submit">Place order</button>
+      <p class="form-note" id="form-note" role="status" aria-live="polite">Submitted through the same API Gateway test invocation the test suite uses.</p>
+    </form>
+
+    <dl class="counts">
+      <div><dt>Orders</dt><dd id="count-total">0</dd></div>
+      <div><dt>Succeeded</dt><dd id="count-succeeded">0</dd></div>
+      <div><dt>Failed</dt><dd id="count-failed">0</dd></div>
+      <div><dt>Invoices</dt><dd id="count-invoices">0</dd></div>
+    </dl>
+
+    <p class="rail-foot">Orders live in memory inside the emulator. Restarting it clears every order and invoice.</p>
+  </section>
+
+  <section class="ledger" aria-labelledby="ledger-title">
+    <div class="ledger-head">
+      <h2 id="ledger-title">Orders</h2>
+      <p id="ledger-note">Newest first · refreshes every 3 seconds</p>
+      <button id="refresh" type="button" class="ghost">Refresh</button>
+    </div>
+    <div class="banner" id="error-banner" role="alert" hidden></div>
+    <div class="table-wrap">
+      <table>
+        <caption class="sr-only">Orders in the emulated workflow. Select a row for details.</caption>
+        <thead>
+          <tr>
+            <th scope="col">Order</th>
+            <th scope="col" class="num">Units</th>
+            <th scope="col" class="num">Attempts</th>
+            <th scope="col">State</th>
+            <th scope="col" class="num">Invoice</th>
+            <th scope="col" class="num">Started</th>
+          </tr>
+        </thead>
+        <tbody id="orders"></tbody>
+      </table>
+      <p class="empty" id="empty" hidden>No orders yet. Place one to watch it move through the workflow.</p>
+    </div>
+  </section>
+
+  <aside class="detail" id="detail" aria-labelledby="detail-title" aria-live="polite">
+    <div class="detail-empty" id="detail-empty">
+      <h2 id="detail-title">Select an order</h2>
+      <p>The timeline shows stored state, retries, the invoice, and what reached the notification inboxes.</p>
+    </div>
+    <div class="detail-body" id="detail-body" hidden></div>
+  </aside>
+</main>
+
+<details class="system" id="system">
+  <summary><span>System trace</span><small>Queues, configuration and recent application logs</small></summary>
+  <div class="system-grid">
+    <section aria-labelledby="queues-title">
+      <h2 id="queues-title">Queues</h2>
+      <div class="queues" id="queues"></div>
+    </section>
+    <section aria-labelledby="logs-title">
+      <h2 id="logs-title">Recent application logs</h2>
+      <ol class="logs" id="logs"><li class="muted">No entries yet.</li></ol>
+      <p class="hint" id="parameter"></p>
+    </section>
+  </div>
+</details>
+
+<footer class="page-foot">
+  <p>Runs entirely on the configured loopback endpoint. No AWS account, cloud resources or telemetry.</p>
+</footer>
+</body>
+</html>

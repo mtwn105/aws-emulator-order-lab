@@ -1,0 +1,147 @@
+{
+  "status": "PASSED",
+  "recordedUtc": "2026-11-15T11:04:14.437899+00:00",
+  "emulatorEndpoint": "https://127.0.0.1:9401",
+  "prefix": "order385",
+  "emulatorVersion": "1.0.385 (existing running lab; no restart or upgrade)",
+  "stackportVersion": "0.4.11",
+  "sdk": "boto3/botocore 1.43.124 in StackPort tool environment",
+  "browser": "Chrome 156 via agent-browser 0.43.0",
+  "newOrdersSubmitted": false,
+  "checks": [
+    "App retry-success, permanent-failure and mobile views captured",
+    "StackPort dashboard and DynamoDB item browser rendered",
+    "Four SQS queues rendered; customer inbox polled without delete or purge",
+    "S3 object metadata displayed for ui-bcd16a55.json",
+    "Step Functions execution list showed SUCCEEDED and FAILED orders",
+    "Log filter returned four correlated events for ui-bcd16a55"
+  ],
+  "limits": [
+    "Existing synthetic lab state inspected; full integration suite not rerun",
+    "Screenshots are point-in-time observations, not delivery or fidelity guarantees",
+    "StackPort Raw object tab shows metadata, not invoice body",
+    "No production AWS calls or remote publication"
+  ],
+  "screenshots": [
+    {
+      "file": "assets/screenshots/app-retry-success.png",
+      "dimensions": [
+        1440,
+        1351
+      ],
+      "sourcePage": "http://127.0.0.1:9410/",
+      "state": "Retry-once order ui-bcd16a55; system trace expanded",
+      "capturedUtc": "2026-11-15T11:00:59.657647+00:00",
+      "sha256": "4a6376d50f1c62aac5692fa8a980517b2e7af4466eaa5ebaf6c60a4cda334975",
+      "method": "agent-browser screenshot of local live page; unedited PNG"
+    },
+    {
+      "file": "assets/screenshots/app-permanent-failure.png",
+      "dimensions": [
+        1440,
+        1078
+      ],
+      "sourcePage": "http://127.0.0.1:9410/",
+      "state": "Permanent-failure order ui-4670ce2b",
+      "capturedUtc": "2026-11-15T10:55:31.646875+00:00",
+      "sha256": "9bcaa8d2bd4638fe7ddf2cbe641b6f6100aa4e65de30f37ea12240a5a943f571",
+      "method": "agent-browser screenshot of local live page; unedited PNG"
+    },
+    {
+      "file": "assets/screenshots/app-mobile.png",
+      "dimensions": [
+        390,
+        2335
+      ],
+      "sourcePage": "http://127.0.0.1:9410/",
+      "state": "390-pixel viewport; ui-bcd16a55 selected",
+      "capturedUtc": "2026-11-15T10:55:34.191102+00:00",
+      "sha256": "c37e930f950651d9e0ab542c1b26fa074450b8000fd3f5a96cf44876f13763d4",
+      "method": "agent-browser screenshot of local live page; unedited PNG"
+    },
+    {
+      "file": "assets/screenshots/stackport-dashboard.png",
+      "dimensions": [
+        1440,
+        1000
+      ],
+      "sourcePage": "http://127.0.0.1:8080/",
+      "state": "Service dashboard",
+      "capturedUtc": "2026-11-15T10:55:43.630618+00:00",
+      "sha256": "77b74bb2ab77f3a8a399e78472f041c6e501783086fc2dce0e84e706e87fcf45",
+      "method": "agent-browser screenshot of local live page; unedited PNG"
+    },
+    {
+      "file": "assets/screenshots/stackport-dynamodb-items.png",
+      "dimensions": [
+        1440,
+        1000
+      ],
+      "sourcePage": "http://127.0.0.1:8080/resources/dynamodb?table=order385-orders",
+      "state": "Order item browser",
+      "capturedUtc": "2026-11-15T10:56:11.292996+00:00",
+      "sha256": "cce90a33a9885c1b25a35d2f9a1631e7a0f6daf2dcefc434434e9f2ff49c4749",
+      "method": "agent-browser screenshot of local live page; unedited PNG"
+    },
+    {
+      "file": "assets/screenshots/stackport-sqs-queues.png",
+      "dimensions": [
+        1440,
+        1000
+      ],
+      "sourcePage": "http://127.0.0.1:8080/resources/sqs",
+      "state": "Four lab queues",
+      "capturedUtc": "2026-11-15T10:56:13.867433+00:00",
+      "sha256": "54cc9e9940e6a044db620579f1289f3235207b56591d0624c7237b77f9518e50",
+      "method": "agent-browser screenshot of local live page; unedited PNG"
+    },
+    {
+      "file": "assets/screenshots/stackport-sqs-messages.png",
+      "dimensions": [
+        1440,
+        1000
+      ],
+      "sourcePage": "http://127.0.0.1:8080/resources/sqs",
+      "state": "order385-customer selected; Poll for messages",
+      "capturedUtc": "2026-11-15T10:57:28.101707+00:00",
+      "sha256": "a14c930a7a730e4f69b9ecad80c7f53969b7089a5da15d777ea1b0e863868243",
+      "method": "agent-browser screenshot of local live page; unedited PNG"
+    },
+    {
+      "file": "assets/screenshots/stackport-s3-invoice.png",
+      "dimensions": [
+        1440,
+        1000
+      ],
+      "sourcePage": "http://127.0.0.1:8080/resources/s3",
+      "state": "order385-invoices/ui-bcd16a55.json metadata; Raw tab",
+      "capturedUtc": "2026-11-15T10:58:13.938618+00:00",
+      "sha256": "41ab75e05130ff9734affc476051fa284448a0d2ce539472897f7335a97589ae",
+      "method": "agent-browser screenshot of local live page; unedited PNG"
+    },
+    {
+      "file": "assets/screenshots/stackport-workflow-executions.png",
+      "dimensions": [
+        1440,
+        1000
+      ],
+      "sourcePage": "http://127.0.0.1:8080/resources/stepfunctions",
+      "state": "State machine order385 selected; execution list",
+      "capturedUtc": "2026-11-15T10:58:45.779820+00:00",
+      "sha256": "3cf691e681ad791f96b5e53df9e14b4f2748580716f32679b9f4b71d4cd10f91",
+      "method": "agent-browser screenshot of local live page; unedited PNG"
+    },
+    {
+      "file": "assets/screenshots/stackport-order-logs.png",
+      "dimensions": [
+        1440,
+        1000
+      ],
+      "sourcePage": "http://127.0.0.1:8080/resources/logs?group=%2Forder385%2Forders&stream=orders",
+      "state": "Filter pattern \"ui-bcd16a55\"; four matching entries",
+      "capturedUtc": "2026-11-15T11:00:37.615622+00:00",
+      "sha256": "44dc59f577d1afbcf45689b0405728b3b39aa8cc2d40c196a44c196e0954b5eb",
+      "method": "agent-browser screenshot of local live page; unedited PNG"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+PASS invalid quantity rejected without storing an order
+PASS none: workflow, attempt count, stored state and invoice verified
+PASS none: notification observed in inbox 1
+PASS none: notification observed in inbox 2
+PASS none: repeated submission preserved attempts; conflicting input rejected
+PASS once: workflow, attempt count, stored state and invoice verified
+PASS once: notification observed in inbox 1
+PASS once: notification observed in inbox 2
+PASS once: repeated submission preserved attempts; conflicting input rejected
+PASS permanent failure exhausted three attempts and created no invoice
+PASS configuration change affected validation
+PASS correlated application log found

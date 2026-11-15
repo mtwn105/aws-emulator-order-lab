@@ -1,0 +1,36 @@
+{
+  "status": "PASSED",
+  "validationKind": "executed local application integration tests, not a complete fidelity audit",
+  "emulator": {
+    "version": "1.0.385",
+    "commit": "813af480bf7f16d5418b64e4f5644a74a7da11c5",
+    "releaseDate": "2026-11-14"
+  },
+  "host": "Linux/WSL2 x86_64",
+  "clientPython": "3.12.14",
+  "sdk": {
+    "boto3": "1.43.124",
+    "botocore": "1.43.124"
+  },
+  "functionRuntime": "python3.12 label, embedded RustPython interpreter with emulator-supplied SDK",
+  "endpoint": "https://127.0.0.1:9397",
+  "region": "us-east-1",
+  "account": "000000000000",
+  "authentication": true,
+  "telemetry": false,
+  "cleanDependencyInstall": true,
+  "successfulRuns": 2,
+  "freshRunId": "01c1c4281e",
+  "freshRunStartedAt": "2026-11-15T06:52:35.389831+00:00",
+  "freshRunFinishedAt": "2026-11-15T06:52:42.134246+00:00",
+  "integrationChecks": 12,
+  "offlineTests": 11,
+  "sdkOperationNameChecks": 40,
+  "fidelityReference": {
+    "reportCommit": "813af480bf7f16d5418b64e4f5644a74a7da11c5",
+    "scoredAt": "2026-11-14T18:34:58.642796+00:00",
+    "sha256": "8e4180c5a443ba93aaf27fa7aa4eaa514046bcbb3f5ca63d6bfb1ca444dad3c3",
+    "corpusCommit": "4df2823bafface2ada35f482c07ff6668cc078e1",
+    "traceByTraceClassification": "not performed; runtime assertions are the evidence for this app"
+  }
+}

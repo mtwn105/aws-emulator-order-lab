@@ -1,0 +1,11 @@
+{
+  "bytes": 3689,
+  "files": [
+    "handler.py",
+    "local_aws.py"
+  ],
+  "sha256": "48c8243df13816e236a786189062d4bc31840fb913787be28c6bc357d0d81b66",
+  "crc": "PASS",
+  "runtimeSDK": "emulator-provided boto3 adapter",
+  "perRunCredentialsExcluded": true
+}

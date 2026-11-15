@@ -1,0 +1,134 @@
+{
+  "Policies": [
+    {
+      "Policy": {
+        "Id": "IamPolicyAutopilot",
+        "Version": "2012-10-17",
+        "Statement": [
+          {
+            "Effect": "Allow",
+            "Action": [
+              "dynamodb:GetItem",
+              "dynamodb:PutItem",
+              "dynamodb:ReadDataForReplication",
+              "dynamodb:UpdateItem",
+              "dynamodb:WriteDataForReplication"
+            ],
+            "Resource": [
+              "arn:aws:dynamodb:us-east-1:000000000000:table/*"
+            ]
+          },
+          {
+            "Effect": "Allow",
+            "Action": [
+              "events:PutEvents"
+            ],
+            "Resource": [
+              "arn:aws:events:us-east-1:000000000000:event-bus/*",
+              "arn:aws:events:us-east-1:000000000000:event-busv2/*/*"
+            ]
+          },
+          {
+            "Effect": "Allow",
+            "Action": [
+              "kms:Decrypt"
+            ],
+            "Resource": [
+              "arn:aws:kms:us-east-1:000000000000:key/*"
+            ],
+            "Condition": {
+              "StringEquals": {
+                "kms:ViaService": [
+                  "dynamodb.us-east-1.amazonaws.com",
+                  "sns.us-east-1.amazonaws.com",
+                  "ssm.us-east-1.amazonaws.com"
+                ]
+              }
+            }
+          },
+          {
+            "Effect": "Allow",
+            "Action": [
+              "kms:GenerateDataKey"
+            ],
+            "Resource": [
+              "arn:aws:kms:us-east-1:000000000000:key/*"
+            ],
+            "Condition": {
+              "StringEquals": {
+                "kms:ViaService": [
+                  "s3.us-east-1.amazonaws.com",
+                  "sns.us-east-1.amazonaws.com"
+                ]
+              }
+            }
+          },
+          {
+            "Effect": "Allow",
+            "Action": [
+              "logs:PutLogEvents"
+            ],
+            "Resource": [
+              "arn:aws:logs:us-east-1:000000000000:log-group:*:log-stream:*"
+            ]
+          },
+          {
+            "Effect": "Allow",
+            "Action": [
+              "s3:PutObject",
+              "s3:PutObjectAcl",
+              "s3:PutObjectLegalHold",
+              "s3:PutObjectRetention",
+              "s3:PutObjectTagging"
+            ],
+            "Resource": [
+              "arn:aws:s3:::*/*",
+              "arn:aws:s3:us-east-1:000000000000:accesspoint/*/object/*"
+            ]
+          },
+          {
+            "Effect": "Allow",
+            "Action": [
+              "s3-object-lambda:PutObject"
+            ],
+            "Resource": [
+              "arn:aws:s3:::*/*",
+              "arn:aws:s3:us-east-1:000000000000:accesspoint/*/object/*"
+            ]
+          },
+          {
+            "Effect": "Allow",
+            "Action": [
+              "sns:Publish"
+            ],
+            "Resource": [
+              "arn:aws:sns:us-east-1:000000000000:*"
+            ]
+          },
+          {
+            "Effect": "Allow",
+            "Action": [
+              "ssm:GetParameter"
+            ],
+            "Resource": [
+              "arn:aws:ssm:us-east-1:000000000000:parameter/*"
+            ]
+          },
+          {
+            "Effect": "Allow",
+            "Action": [
+              "states:DescribeExecution",
+              "states:StartExecution"
+            ],
+            "Resource": [
+              "arn:aws:states:us-east-1:000000000000:execution:*:*",
+              "arn:aws:states:us-east-1:000000000000:express:*:*:*",
+              "arn:aws:states:us-east-1:000000000000:stateMachine:*"
+            ]
+          }
+        ]
+      },
+      "PolicyType": "Identity"
+    }
+  ]
+}

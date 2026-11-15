@@ -1,0 +1,19 @@
+{
+  "status": "PASSED",
+  "runId": "da8c4cdfe3",
+  "checks": [
+    "invalid quantity rejected without storing an order",
+    "none: workflow, attempt count, stored state and invoice verified",
+    "none: notification observed in inbox 1",
+    "none: notification observed in inbox 2",
+    "none: repeated submission preserved attempts; conflicting input rejected",
+    "once: workflow, attempt count, stored state and invoice verified",
+    "once: notification observed in inbox 1",
+    "once: notification observed in inbox 2",
+    "once: repeated submission preserved attempts; conflicting input rejected",
+    "permanent failure exhausted three attempts and created no invoice",
+    "configuration change affected validation",
+    "correlated application log found"
+  ],
+  "apiMode": "API Gateway TestInvokeMethod (not a deployed HTTP URL)"
+}

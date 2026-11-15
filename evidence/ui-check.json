@@ -1,0 +1,40 @@
+{
+  "status": "PASSED",
+  "checkedAt": "2026-11-15T08:36:41Z",
+  "validationKind": "executed browser interaction against the local dashboard; not a usability or accessibility audit",
+  "emulator": {
+    "version": "1.0.385",
+    "commit": "813af480bf7f16d5418b64e4f5644a74a7da11c5",
+    "endpoint": "https://127.0.0.1:9401",
+    "prefix": "order385"
+  },
+  "client": {
+    "environment": "uv 0.12.13, .venv from uv.lock, CPython 3.12.14",
+    "boto3": "1.43.124",
+    "botocore": "1.43.124",
+    "browser": "headless Chrome 156.0.8078.47 via agent-browser 0.43.0"
+  },
+  "entrypoint": "127.0.0.1:9410 (stdlib ThreadingHTTPServer, loopback bind)",
+  "checks": [
+    "GET / returned 200 and rendered the workbench; /api/lab returned prefix, endpoint and limit 5",
+    "Submitting quantity 4 with failure once through the form returned 202 and created ui-bcd16a55",
+    "Detail for ui-bcd16a55 showed 2 attempts, Event accepted, invoice 100.00 USD, and both inboxes observed",
+    "Submitting quantity 2 with failure always created ui-4670ce2b; detail showed Failed, 3 attempts, no invoice, both inboxes not observed",
+    "Order log and system trace showed stages for both orders and queue depths for four queues",
+    "Keyboard focus on an order row plus Enter opened its detail",
+    "Desktop capture 1440x1351 and mobile capture 390x2142 rendered without page-level horizontal overflow",
+    "At 390 px the ledger hid the invoice and started columns, kept four columns without clipping, and stacked the detail panel below",
+    "No resource requests returned an HTTP error status during the checks"
+  ],
+  "screenshots": {
+    "desktop": "evidence/ui-desktop.png (1440x1351)",
+    "mobile": "evidence/ui-mobile.png (390x2142)"
+  },
+  "limits": [
+    "No screen-reader, cross-browser (Firefox/Safari) or touch-device testing",
+    "Keyboard coverage was limited to row activation; the full tab order was not audited",
+    "Inbox indicators are ReceiveMessage peeks with VisibilityTimeout=0, not delivery guarantees",
+    "The dashboard has no authentication by design and must bind to loopback only",
+    "The service remains API Gateway TestInvokeMethod; it is not a deployed HTTP endpoint"
+  ]
+}

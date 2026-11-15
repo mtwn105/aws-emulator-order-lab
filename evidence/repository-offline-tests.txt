@@ -1,0 +1,23 @@
+test_emulator_runtime_does_not_read_host_credentials (test_offline.OfflineTests.test_emulator_runtime_does_not_read_host_credentials) ... ok
+test_first_injected_failure_happens_before_invoice (test_offline.OfflineTests.test_first_injected_failure_happens_before_invoice) ... ok
+test_invalid_quantities_do_not_touch_storage (test_offline.OfflineTests.test_invalid_quantities_do_not_touch_storage) ... ok
+test_malformed_json_is_bad_request (test_offline.OfflineTests.test_malformed_json_is_bad_request) ... ok
+test_partial_batch_response_preserves_failed_record (test_offline.OfflineTests.test_partial_batch_response_preserves_failed_record) ... ok
+test_publish_checks_event_entry_failure (test_offline.OfflineTests.test_publish_checks_event_entry_failure) ... ok
+test_refuses_cloud_endpoint_before_credentials (test_offline.OfflineTests.test_refuses_cloud_endpoint_before_credentials) ... ok
+test_refuses_non_emulator_credentials (test_offline.OfflineTests.test_refuses_non_emulator_credentials) ... ok
+test_repeated_fulfil_does_not_rewrite_invoice (test_offline.OfflineTests.test_repeated_fulfil_does_not_rewrite_invoice) ... ok
+test_runtime_flag_cannot_bypass_host_credentials_on_cpython (test_offline.OfflineTests.test_runtime_flag_cannot_bypass_host_credentials_on_cpython) ... ok
+test_workflow_retries_and_failure_context (test_offline.OfflineTests.test_workflow_retries_and_failure_context) ... ok
+test_total_accepts_numeric_strings (test_web.InvoiceTests.test_total_accepts_numeric_strings) ... ok
+test_total_is_quantity_times_unit_price (test_web.InvoiceTests.test_total_is_quantity_times_unit_price) ... ok
+test_row_uses_stored_state_and_invoice (test_web.RowTests.test_row_uses_stored_state_and_invoice) ... ok
+test_row_without_invoice_has_no_total (test_web.RowTests.test_row_without_invoice_has_no_total) ... ok
+test_accepts_valid_order (test_web.ValidationTests.test_accepts_valid_order) ... ok
+test_rejects_bad_quantity_and_id (test_web.ValidationTests.test_rejects_bad_quantity_and_id) ... ok
+test_rejects_unknown_failure_mode (test_web.ValidationTests.test_rejects_unknown_failure_mode) ... ok
+
+----------------------------------------------------------------------
+Ran 18 tests in 0.090s
+
+OK

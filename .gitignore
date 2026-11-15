@@ -1,0 +1,16 @@
+.venv/
+.local/
+__pycache__/
+*.pyc
+lambda.zip
+
+# Per-run emulator material and local configuration
+.aws-emulator/
+.aws/
+.env
+.env.*
+!.env.example
+*.pem
+*.p12
+emulator_credentials
+.DS_Store

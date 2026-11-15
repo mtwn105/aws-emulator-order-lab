@@ -1,0 +1,66 @@
+{
+  "status": "PASSED",
+  "runId": "01c1c4281e",
+  "checks": [
+    "invalid quantity rejected without storing an order",
+    "none: workflow, attempt count, stored state and invoice verified",
+    "none: notification observed in inbox 1",
+    "none: notification observed in inbox 2",
+    "none: repeated submission preserved attempts; conflicting input rejected",
+    "once: workflow, attempt count, stored state and invoice verified",
+    "once: notification observed in inbox 1",
+    "once: notification observed in inbox 2",
+    "once: repeated submission preserved attempts; conflicting input rejected",
+    "permanent failure exhausted three attempts and created no invoice",
+    "configuration change affected validation",
+    "correlated application log found"
+  ],
+  "orders": [
+    {
+      "orderId": "01c1c4281e-none",
+      "mode": "none",
+      "executionStatus": "SUCCEEDED",
+      "attempts": 1,
+      "orderStatus": "EVENT_ACCEPTED",
+      "invoice": {
+        "orderId": "01c1c4281e-none",
+        "quantity": 2,
+        "totalCents": 5000,
+        "currency": "USD"
+      },
+      "notificationInboxes": [
+        1,
+        2
+      ]
+    },
+    {
+      "orderId": "01c1c4281e-once",
+      "mode": "once",
+      "executionStatus": "SUCCEEDED",
+      "attempts": 2,
+      "orderStatus": "EVENT_ACCEPTED",
+      "invoice": {
+        "orderId": "01c1c4281e-once",
+        "quantity": 2,
+        "totalCents": 5000,
+        "currency": "USD"
+      },
+      "notificationInboxes": [
+        1,
+        2
+      ]
+    },
+    {
+      "orderId": "01c1c4281e-always",
+      "mode": "always",
+      "executionStatus": "FAILED",
+      "attempts": 3,
+      "orderStatus": "FAILED",
+      "invoice": null,
+      "notificationInboxes": []
+    }
+  ],
+  "startedAt": "2026-11-15T06:52:35.389831+00:00",
+  "apiMode": "API Gateway TestInvokeMethod (not a deployed HTTP URL)",
+  "finishedAt": "2026-11-15T06:52:42.134246+00:00"
+}

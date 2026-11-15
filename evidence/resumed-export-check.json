@@ -1,0 +1,16 @@
+{
+  "status": "PASSED",
+  "source_sha256": "708802c977e9aa1d6758c31dd686c8a0d5faf64e0eacd56e97088114579319f6",
+  "codeExamples": 6,
+  "checks": [
+    "Article source hash matches export manifest",
+    "All six plain-text snippets exactly match source",
+    "All six code copy controls and download paths present",
+    "Thumbnail exists and is referenced",
+    "Dashboard and uv instructions present"
+  ],
+  "limitations": [
+    "Static verification only; local sockets denied in resumed sandbox",
+    "Fresh browser, clipboard and live emulator checks unavailable"
+  ]
+}
